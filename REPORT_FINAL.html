@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>التقرير النهائي - مشروع اختيار الميزات (BIA601)</title>
+		<style>
+			:root {
+				--primary: #2c3e50;
+				--accent: #3498db;
+				--muted: #6b7280;
+				--text: #1f2937;
+				--bg: #ffffff;
+				--code-bg: #0b1020;
+				--code-fg: #e5e7eb;
+				--border: #e5e7eb;
+				--note-bg: #f0f9ff;
+				--note-border: #bae6fd;
+			}
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				background: var(--bg);
+				color: var(--text);
+				font-family: 'Segoe UI', Tahoma, Arial, 'DejaVu Sans', sans-serif;
+				line-height: 1.85;
+			}
+			.container {
+				max-width: 1024px;
+				margin: 0 auto;
+				padding: 28px 20px 60px;
+			}
+			header {
+				border-bottom: 4px solid var(--accent);
+				padding-bottom: 16px;
+				margin-bottom: 28px;
+			}
+			h1 {
+				margin: 0 0 6px;
+				font-size: 2.2rem;
+				color: var(--primary);
+			}
+			.meta {
+				color: var(--muted);
+				font-size: 0.95rem;
+			}
+			h2 {
+				font-size: 1.6rem;
+				color: var(--primary);
+				border-bottom: 2px solid var(--border);
+				padding-bottom: 8px;
+				margin-top: 32px;
+				margin-bottom: 14px;
+			}
+			h3 {
+				font-size: 1.25rem;
+				color: var(--primary);
+				margin-top: 20px;
+				margin-bottom: 10px;
+			}
+			p {
+				margin: 0 0 12px;
+				text-align: justify;
+			}
+			ul {
+				margin: 0 0 14px;
+				padding-right: 20px;
+			}
+			li {
+				margin: 6px 0;
+			}
+			.grid {
+				display: grid;
+				gap: 14px;
+				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+			}
+			.card {
+				border: 1px solid var(--border);
+				border-radius: 12px;
+				padding: 16px;
+				background: #fff;
+			}
+			.note {
+				background: var(--note-bg);
+				border: 1px solid var(--note-border);
+				color: #0c4a6e;
+				border-radius: 10px;
+				padding: 14px 16px;
+				margin: 16px 0;
+			}
+			.pill {
+				display: inline-block;
+				font-size: 0.85rem;
+				padding: 2px 8px;
+				border-radius: 999px;
+				border: 1px solid #a7f3d0;
+				background: #d1fae5;
+				color: #065f46;
+			}
+			.kbd {
+				display: inline-block;
+				background: #f3f4f6;
+				border: 1px solid #d1d5db;
+				border-bottom-width: 2px;
+				border-radius: 6px;
+				padding: 2px 8px;
+				font-size: 0.9rem;
+				margin: 0 2px;
+			}
+			.code {
+				background: var(--code-bg);
+				color: var(--code-fg);
+				border-radius: 10px;
+				padding: 14px;
+				overflow-x: auto;
+				font-family: 'JetBrains Mono', 'Courier New', monospace;
+				font-size: 0.92rem;
+				direction: ltr;
+				text-align: left;
+				border: 1px solid #111827;
+				margin: 10px 0 16px;
+			}
+			.small {
+				font-size: 0.92rem;
+				color: var(--muted);
+			}
+			.list-compact li {
+				margin: 2px 0;
+			}
+			footer {
+				margin-top: 36px;
+				color: var(--muted);
+				font-size: 0.95rem;
+				border-top: 1px dashed var(--border);
+				padding-top: 12px;
+			}
+			a {
+				color: #2563eb;
+				text-decoration: none;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			.table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 8px 0 16px;
+			}
+			.table th,
+			.table td {
+				border: 1px solid var(--border);
+				padding: 8px 10px;
+			}
+			.table th {
+				background: #f9fafb;
+				color: var(--primary);
+			}
+		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>التقرير النهائي - مشروع اختيار الميزات (BIA601)</h1>
+				<div class="meta">جامعة | مساق: الخوارزميات المتقدمة | التاريخ: 2025-11-04</div>
+			</header>
+
+			<section>
+				<h2>الملخص</h2>
+				<p>
+					يقدّم هذا المشروع نظاماً عملياً لاختيار الميزات باستخدام الخوارزمية الجينية، مع مقارنة منهجية بطرق تقليدية تشمل Correlation وMutual Information
+					وUnivariate وRFE، بالإضافة إلى PCA الذي استُخدم لتخفيض الأبعاد واستخلاص ميزات مؤثرة من تحميلات المكوّنات. يضم المشروع واجهة ويب متكاملة لتحميل
+					البيانات وتشغيل التحليل ورؤية النتائج بصرياً، مع كود اختبارات وأمثلة.
+				</p>
+			</section>
+
+			<section>
+				<h2>هيكل المشروع</h2>
+				<div class="grid">
+					<div class="card">
+						<h3>المجلدات الأساسية</h3>
+						<ul class="list-compact">
+							<li><span class="kbd">src/genetic_algorithm/</span>: الخوارزمية الجينية (الكروموسوم، العوامل، الخوارزمية).</li>
+							<li><span class="kbd">src/traditional_methods/</span>: الطرق التقليدية (Correlation, MI, Univariate, RFE, PCA).</li>
+							<li><span class="kbd">src/web_app/</span>: تطبيق Flask للويب (رفع وتشغيل وعرض).</li>
+							<li><span class="kbd">src/compare_methods.py</span>: مقارنة موحدة لكل الطرق.</li>
+							<li><span class="kbd">tests/</span>: اختبارات الوحدة.</li>
+							<li><span class="kbd">examples/</span>: أمثلة تشغيل.</li>
+						</ul>
+					</div>
+					<div class="card">
+						<h3>تشغيل الويب محلياً</h3>
+						<ol>
+							<li>تفعيل البيئة: <span class="kbd">source venv/bin/activate</span></li>
+							<li>تشغيل الويب: <span class="kbd">python main.py web --host 127.0.0.1 --port 5000</span></li>
+							<li>فتح المتصفح: <span class="kbd">http://127.0.0.1:5000</span></li>
+						</ol>
+						<div class="note">تم تعطيل reloader لتفادي مسح حالة التقدّم أثناء التطوير.</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>المنهجية</h2>
+				<h3>الخوارزمية الجينية</h3>
+				<p>
+					تُشفَّر كل مجموعة ميزات بكُروموسوم ثنائي (1 اختيار، 0 استبعاد). تُستخدم انتقائية، وتزاوج، وطفرات مع نخبة، وتُقيَّم اللياقة بمزيج من دقّة النموذج
+					وتقليل عدد الميزات.
+				</p>
+				<div class="code"
+					>from src.genetic_algorithm import GeneticAlgorithm ga = GeneticAlgorithm( X, y, population_size=30, n_generations=20, crossover_rate=0.8,
+					mutation_rate=0.01, random_state=42 ) result = ga.run(verbose=False) selected = result['selected_features']</div
+				>
+
+				<h3>الطرق التقليدية</h3>
+				<ul>
+					<li><b>Correlation:</b> اختيار أعلى الميزات ارتباطاً بالهدف.</li>
+					<li><b>Mutual Information:</b> قياس معلومات متبادلة بين كل ميزة والهدف.</li>
+					<li><b>Univariate Tests:</b> اختبارات إحصائية أحادية (F/chi2).</li>
+					<li><b>RFE:</b> إقصاء تكراري بالاعتماد على نموذج (Random Forest).</li>
+					<li><b>PCA:</b> تخفيض أبعاد؛ تُستخدم تحميلات المكونات لاشتقاق أهم الميزات الأصلية.</li>
+				</ul>
+				<div class="code"
+					>from src.traditional_methods import ( CorrelationSelector, MutualInfoSelector, UnivariateSelector, RecursiveEliminationSelector, PCASelector )
+					selectors = [ ("Correlation", CorrelationSelector(k=20)), ("Mutual Information", MutualInfoSelector(k=20)), ("Univariate", UnivariateSelector(k=20)),
+					("RFE", RecursiveEliminationSelector(n_features_to_select=20)), ("PCA", PCASelector(n_components=0.95)) ]</div
+				>
+			</section>
+
+			<section>
+				<h2>المقارنة الموحّدة</h2>
+				<p>
+					تُنفّذ جميع الطرق على نفس تقسيم البيانات، وتُقيّم بآلية واحدة عبر <span class="kbd">MethodComparer</span>: دقّة الاختبار، F1 موزون، متوسط CV-5، وزمن
+					التنفيذ.
+				</p>
+				<div class="code"
+					>from src.compare_methods import MethodComparer comparer = MethodComparer(X, y, random_state=42) results = comparer.compare_all() summary =
+					comparer.get_summary() print(summary)</div
+				>
+				<table class="table">
+					<thead
+						><tr><th>الطريقة</th><th>عدد الميزات</th><th>زمن الملاءمة (ث)</th><th>Accuracy</th><th>F1</th><th>CV</th></tr></thead
+					>
+					<tbody>
+						<tr><td>Genetic Algorithm</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+						<tr><td>Correlation</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+						<tr><td>Mutual Information</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+						<tr><td>Univariate</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+						<tr><td>RFE</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+						<tr><td>PCA</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+					</tbody>
+				</table>
+				<p class="small">(تُملأ القيم بعد التشغيل على البيانات الفعلية للمساق.)</p>
+			</section>
+
+			<section>
+				<h2>واجهة الويب</h2>
+				<p>
+					تتيح الواجهة رفع ملف CSV/Excel، اختيار عمود الهدف، ثم تشغيل جميع الطرق وعرض التقدّم والنتائج (بما فيها PCA). نقطة البداية: <span class="kbd">/</span>،
+					ونقاط API: <span class="kbd">/api/upload</span>, <span class="kbd">/api/run_analysis</span>, <span class="kbd">/api/progress/&lt;job_id&gt;</span>.
+				</p>
+				<div class="code"># تشغيل الويب (محلياً) python main.py web --host 127.0.0.1 --port 5000</div>
+				<div class="note">تمت إضافة تحويل JSON آمن لأنواع NumPy لتفادي أخطاء 500 أثناء الاستعلام عن التقدّم.</div>
+			</section>
+
+			<section>
+				<h2>مقتطفات كود رئيسية</h2>
+				<h3>تفعيل PCA في المقارنة</h3>
+				<div class="code"
+					># داخل src/compare_methods.py (مقتطف) from .traditional_methods import ( CorrelationSelector, MutualInfoSelector, UnivariateSelector,
+					RecursiveEliminationSelector, PCASelector ) # ... # 6. PCA pca_selector = PCASelector(n_components=0.95) pca_selector.fit(self.X_train, self.y_train)
+					self.results['pca'] = self.evaluate_method( 'PCA', pca_selector.get_selected_features(), pca_time )</div
+				>
+
+				<h3>دعم PCA في الويب</h3>
+				<div class="code"
+					># داخل src/web_app/app.py (مقتطف) methods_list = [ ('genetic_algorithm','Genetic Algorithm',20,60), ('correlation','Correlation',60,70),
+					('mutual_information','Mutual Information',70,80), ('univariate','Univariate',80,90), ('rfe','RFE',90,95), ('pca','PCA',95,100) ] elif method_key ==
+					'pca': selector = PCASelector(n_components=0.95) selector.fit(X, y) selected = selector.get_selected_features()</div
+				>
+			</section>
+
+			<section>
+				<h2>المتطلبات والتشغيل</h2>
+				<ul>
+					<li>Python ≥ 3.8</li>
+					<li>التثبيت: <span class="kbd">pip install -r requirements.txt</span></li>
+					<li>بدء الويب: <span class="kbd">python main.py web --host 127.0.0.1 --port 5000</span></li>
+					<li>تشغيل الأمثلة: <span class="kbd">python examples/example_usage.py</span></li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>العرض التجريبي</h2>
+				<p>الفيديو (محلياً في المستودع):</p>
+				<video src="demo.mp4" controls width="860" muted> متصفحك لا يدعم تشغيل الفيديو، استخدم الرابط المباشر للتحميل. </video>
+				<p><a href="demo.mp4">رابط مشاهدة/تنزيل مباشر</a></p>
+			</section>
+
+			<section>
+				<h2>الخلاصة</h2>
+				<p>
+					تم بناء نظام متكامل لاختيار الميزات يجمع بين القوة الاستكشافية للخوارزمية الجينية وسرعة الطرق التقليدية ومرونة PCA. يوفّر المشروع أساساً عملياً قابلاً
+					للتوسّع والدمج في تطبيقات تعلم الآلة المختلفة، مع واجهة ويب تسهّل التشغيل والمقارنة.
+				</p>
+			</section>
+
+			<footer>
+				<div>© مشروع BIA601 | هذا المستند HTML مستقل وجاهز للرفع أو الطباعة كـ PDF من المتصفح.</div>
+			</footer>
+		</div>
+	</body>
+</html>

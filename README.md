@@ -134,11 +134,11 @@ http://localhost:5000
 
 ## العرض التجريبي (Demo)
 
-<video src="Screen%20Recording%202025-11-01%20at%2012.04.36%E2%80%AFPM.mov" controls width="800" muted>
+<video src="demo.mp4" controls width="800" muted>
   متصفحك لا يدعم تشغيل الفيديو. يمكنك تنزيله من الرابط أدناه.
 </video>
 
-رابط مباشر للفيديو: [مشاهدة/تنزيل](Screen%20Recording%202025-11-01%20at%2012.04.36%E2%80%AFPM.mov)
+رابط مباشر للفيديو: [مشاهدة/تنزيل](demo.mp4)
 
 ### معايير البيانات المدعومة
 
