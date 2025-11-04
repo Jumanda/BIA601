@@ -28,7 +28,8 @@ def main():
     if args.command == 'web':
         from src.web_app.app import app
         print(f"Starting web application on http://{args.host}:{args.port}")
-        app.run(debug=args.debug, host=args.host, port=args.port)
+        # Disable reloader to avoid clearing in-memory progress storage during development
+        app.run(debug=args.debug, host=args.host, port=args.port, use_reloader=False, threaded=True)
     
     elif args.command == 'example':
         import subprocess

@@ -46,6 +46,25 @@ os.makedirs(RESULTS_FOLDER, exist_ok=True)
 progress_storage = {}
 
 
+def _to_json_safe(value):
+    """Recursively convert numpy types and arrays to JSON-serializable python types."""
+    import numpy as _np
+    import pandas as _pd
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return value
+    if isinstance(value, (_np.generic,)):
+        return value.item()
+    if isinstance(value, (_np.ndarray, list, tuple, set)):
+        return [ _to_json_safe(v) for v in list(value) ]
+    if isinstance(value, dict):
+        return { str(k): _to_json_safe(v) for k, v in value.items() }
+    if isinstance(value, (_pd.Series,)):
+        return _to_json_safe(value.tolist())
+    if isinstance(value, (_pd.DataFrame,)):
+        return _to_json_safe(value.to_dict(orient='records'))
+    return str(value)
+
+
 def allowed_file(filename):
     """Check if file extension is allowed."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -291,7 +310,7 @@ def run_analysis_threaded(job_id, filename, target_column, ga_params):
             'status': 'complete',
             'progress': 100,
             'message': 'Analysis complete!',
-            'results': response_data
+            'results': _to_json_safe(response_data)
         }
         
     except Exception as e:
@@ -359,7 +378,7 @@ def get_progress(job_id):
             })
         
         # Return current progress
-        return jsonify({
+        return jsonify(_to_json_safe({
             'status': progress_data.get('status', 'unknown'),
             'progress': progress_data.get('progress', 0),
             'message': progress_data.get('message', 'Processing...'),
@@ -367,7 +386,7 @@ def get_progress(job_id):
             'best_fitness': progress_data.get('best_fitness'),
             'n_features': progress_data.get('n_features'),
             'model_score': progress_data.get('model_score')
-        })
+        }))
     except Exception as e:
         return jsonify({
             'status': 'error',
